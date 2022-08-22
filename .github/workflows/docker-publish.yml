@@ -42,5 +42,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
           push: true
-          tags: ghcr.io/fizic37/Litigii_cronjob:latest
+          tags: ghcr.io/fizic37/litigii_cronjob:latest
           file: ./Dockerfile
