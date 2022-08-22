@@ -1,0 +1,5 @@
+.Rhistory
+.Rproj.user/
+R/reactivedata/
+R/logs/
+golem-config.yml

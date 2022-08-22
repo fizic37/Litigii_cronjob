@@ -1,0 +1,3 @@
+^Dockerfile$
+^.*\.Rproj$
+^\.Rproj\.user$
