@@ -16,7 +16,7 @@ RUN Rscript -e 'remotes::install_version("cronR",upgrade="never", version = "0.6
 RUN mkdir /build_zone
 ADD . /build_zone
 WORKDIR /build_zone
-RUN R -e 'renv::install("cronR");cronR::cron_add(cronR::cron_rscript("script_actualizare_sentine.R"), frequency = "daily", at = "1PM", id="job1", description="Update Sentinte", ask=FALSE, dry_run=FALSE)'
+RUN R -e 'renv::install("cronR");cronR::cron_add(cronR::cron_rscript("script_actualizare_sentinte.R"), frequency = "daily", at = "1PM", id="job1", description="Update Sentinte", ask=FALSE, dry_run=FALSE)'
 #RUN rm -rf /build_zone
 #RUN touch /var/log/cron.log
 #RUN (crontab -l ; echo "* 2 * * * Rscript /script_actualizare_sentinte.R  >> /var/log/cron.log") | crontab
