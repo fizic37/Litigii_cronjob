@@ -2,4 +2,4 @@
 .Rproj.user/
 R/reactivedata/
 R/logs/
-golem-config.yml
+R/credentials/
