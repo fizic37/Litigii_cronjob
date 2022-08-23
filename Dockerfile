@@ -18,8 +18,8 @@ RUN mkdir /build_zone
 ADD . /build_zone
 WORKDIR /build_zone
 #RUN R -e 'renv::install("cronR");cronR::cron_add(cronR::cron_rscript("script_actualizare_sentinte.R"), frequency = "daily", at = "2PM", id="job1", description="Update Sentinte", ask=FALSE, dry_run=FALSE)'
-RUN rm -rf /build_zone
+#RUN rm -rf /build_zone
 RUN touch /var/log/cron.log
-RUN (crontab -l ; echo "0 15 * * * /usr/local/lib/R/bin/Rscript '/build_zone/script_actualizare_sentinte.R'  >> /var/log/cron.log 2>&1 ") | crontab
+RUN (crontab -l ; echo "0 16 * * * /usr/local/lib/R/bin/Rscript '/build_zone/script_actualizare_sentinte.R'  >> /var/log/cron.log 2>&1 ") | crontab
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
