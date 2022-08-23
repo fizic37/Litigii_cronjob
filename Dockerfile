@@ -1,5 +1,5 @@
 FROM rocker/verse:4.1.0
-RUN apt-get update && apt-get install -y  libcurl4-openssl-dev libicu-dev libmariadb-dev libxml2-dev cron make && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y  libcurl4-openssl-dev libicu-dev libmariadb-dev libxml2-dev cron nano make && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
 RUN R -e 'install.packages("remotes")'
