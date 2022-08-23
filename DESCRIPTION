@@ -13,9 +13,11 @@ RoxygenNote: 7.0.0
 Imports: 
     config,
     DBI,
+    dbplyr,
     dplyr,
     purrr,
     RCurl,
+    rebus,
     RMySQL,
     stringr,
     xml2
