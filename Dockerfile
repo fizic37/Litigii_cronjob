@@ -12,6 +12,7 @@ RUN Rscript -e 'remotes::install_version("RMySQL",upgrade="never", version = "0.
 RUN Rscript -e 'remotes::install_version("RCurl",upgrade="never", version = "1.98-1.5")'
 RUN Rscript -e 'remotes::install_version("dplyr",upgrade="never", version = "1.0.9")'
 RUN Rscript -e 'remotes::install_version("config",upgrade="never", version = "0.3.1")'
+RUN Rscript -e 'remotes::install_version("rebus",upgrade="never", version = "0.1-3")'
 #RUN Rscript -e 'remotes::install_version("cronR",upgrade="never", version = "0.6.2")'
 RUN mkdir /build_zone
 ADD . /build_zone
