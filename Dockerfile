@@ -3,6 +3,7 @@ RUN apt-get update && apt-get install -y  libcurl4-openssl-dev libicu-dev libmar
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
 RUN R -e 'install.packages("remotes")'
+RUN Rscript -e 'remotes::install_version("renv",upgrade="never", version = "0.15.5")'
 RUN Rscript -e 'remotes::install_version("purrr",upgrade="never", version = "0.3.4")'
 RUN Rscript -e 'remotes::install_version("DBI",upgrade="never", version = "1.1.3")'
 RUN Rscript -e 'remotes::install_version("xml2",upgrade="never", version = "1.3.2")'
