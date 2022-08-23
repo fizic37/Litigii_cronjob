@@ -1,4 +1,4 @@
-FROM rocker/verse:4.1.0
+FROM rocker/r-ver:4.1.0
 RUN apt-get update && apt-get install -y  libcurl4-openssl-dev libicu-dev libmariadb-dev libxml2-dev cron nano make && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
@@ -16,7 +16,7 @@ RUN Rscript -e 'remotes::install_version("rebus",upgrade="never", version = "0.1
 #RUN Rscript -e 'remotes::install_version("cronR",upgrade="never", version = "0.6.2")'
 RUN mkdir /build_zone
 ADD . /build_zone
-#WORKDIR /build_zone
+WORKDIR /build_zone
 #RUN R -e 'renv::install("cronR");cronR::cron_add(cronR::cron_rscript("script_actualizare_sentinte.R"), frequency = "daily", at = "2PM", id="job1", description="Update Sentinte", ask=FALSE, dry_run=FALSE)'
 RUN rm -rf /build_zone
 RUN touch /var/log/cron.log
