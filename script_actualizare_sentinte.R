@@ -1,6 +1,7 @@
 library(rebus)
 library(magrittr)
 
+setwd("/build_zone")
 
 
 options(echo = TRUE)
